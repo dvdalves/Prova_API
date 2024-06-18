@@ -6,8 +6,24 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+	<ItemGroup>
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+
+	<ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
+
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Prova_API.Data\Prova_API.Data.csproj" />
+	  <ProjectReference Include="..\Prova_API.Domain\Prova_API.Domain.csproj" />
+	</ItemGroup>
 
 </Project>
