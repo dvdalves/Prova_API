@@ -38,10 +38,7 @@ namespace Prova_API.Controllers
         public async Task<ActionResult<Produto>> Get(Guid id)
         {
             var produto = await _produtoRepository.ObterPorId(id);
-            if (produto == null)
-            {
-                return NotFound();
-            }
+            if (produto == null) return NotFound();
 
             return Ok(produto);
         }
@@ -56,10 +53,7 @@ namespace Prova_API.Controllers
         [HttpPut("{id:guid}")]
         public async Task<IActionResult> Put(Guid id, Produto produto)
         {
-            if (id != produto.Id)
-            {
-                return BadRequest();
-            }
+            if (id != produto.Id) return BadRequest();
 
             try
             {
@@ -91,16 +85,12 @@ namespace Prova_API.Controllers
         public async Task<IActionResult> Patch(Guid id)
         {
             var produto = await _produtoRepository.ObterPorId(id);
-            if (produto == null)
-            {
-                return NotFound();
-            }
+            if (produto == null) return NotFound();
 
             produto.Ativar();
             await _produtoRepository.Atualizar(produto);
 
             return NoContent();
         }
-
     }
 }

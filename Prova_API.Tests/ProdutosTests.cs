@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Prova_API.Configurations;
 using Prova_API.Controllers;
 using Prova_API.Domain.Models;
 using Prova_API.Infra.Repository;
@@ -176,6 +177,23 @@ namespace Prova_API.Tests
 
             // Assert
             Assert.That(result.Result, Is.InstanceOf<NotFoundResult>());
+        }
+
+        [Test]
+        public async Task Obter_Produtos_Sucesso()
+        {
+            // Arrange
+            PopularBancoDeDados(ProdutosMock.GetProdutosMock());
+
+            // Act
+            var result = await _controller.Get();
+
+            // Assert
+            var okResult = result.Result as OkObjectResult;
+            var resultado = okResult.Value as ResultadoPagina<Produto>;
+            Assert.That(result.Result, Is.InstanceOf<OkObjectResult>());
+            Assert.That(okResult.Value, Is.InstanceOf<ResultadoPagina<Produto>>());
+            Assert.That(resultado.Items.Count, Is.EqualTo(1));
         }
 
         [Test]

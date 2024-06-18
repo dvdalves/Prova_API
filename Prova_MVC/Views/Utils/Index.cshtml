@@ -35,7 +35,7 @@
                 <td>@(itemIndex++)</td>
                 <td>@produto.Nome</td>
                 <td>@produto.Descricao</td>
-                <td>@produto.Valor</td>
+                <td>@produto.Valor.ToString("C", CultureInfo.GetCultureInfo("pt-BR"))</td>
                 <td>@produto.Ativo</td>
                 <td>@produto.DataCadastro.ToString("dd/MM/yyyy HH:mm:ss.fff")</td>
             </tr>
