@@ -21,10 +21,5 @@ namespace Prova_MVC.Models
         {
             DataCadastro = DateTime.UtcNow;
         }
-
-        public void Ativar()
-        {
-            Ativo = true;
-        }
     }
 }

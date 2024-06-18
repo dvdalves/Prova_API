@@ -1,4 +1,4 @@
-﻿namespace Prova_API.Controllers.Utils
+﻿namespace Prova_API.Configurations
 {
     public class ResultadoPagina<T>
     {

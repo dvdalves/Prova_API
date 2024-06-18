@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Prova_API.Configurations;
 using Prova_API.Controllers.Utils;
 using Prova_API.Domain.Models;
 using Prova_API.Infra.Data;
@@ -80,13 +81,8 @@ public class UtilsController : BaseController
     [Route("DataAtual")]
     public IActionResult Get()
     {
-        // Obtém a data e hora atual em UTC
         var utcNow = DateTime.UtcNow;
-
-        // Converte a data e hora de UTC para o horário de Brasília
         var brasiliaDateTime = TimeZoneInfo.ConvertTimeFromUtc(utcNow, BrasiliaTimeZone);
-
-        // Retorna a data e hora em formato ISO 8601
         return Ok(new { currentDateTime = brasiliaDateTime.ToString("yyyy-MM-ddTHH:mm:ss.fffK") });
     }
 }

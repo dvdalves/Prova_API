@@ -34,6 +34,5 @@ namespace Prova_MVC.Services
             var response = await _httpClient.GetFromJsonAsync<JsonElement>("api/utils/DataAtual");
             return response.GetProperty("currentDateTime").GetString();
         }
-
     }
 }

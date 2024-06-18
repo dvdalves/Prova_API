@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Prova_API.Configurations;
 using Prova_API.Controllers.Utils;
 using Prova_API.Domain.Models;
 using Prova_API.Infra.Repository;
