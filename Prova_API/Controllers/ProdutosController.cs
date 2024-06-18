@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Prova_API.Controllers.Utils;
-using Prova_API.Data.Repository;
 using Prova_API.Domain.Models;
+using Prova_API.Infra.Repository;
 
 namespace Prova_API.Controllers
 {
@@ -17,7 +17,7 @@ namespace Prova_API.Controllers
             _produtoRepository = produtoRepository;
         }
 
-        [HttpGet("{int:page}{int:pageSize}")]
+        [HttpGet("{page:int}/{pageSize:int}")]
         public async Task<ActionResult<ResultadoPagina<Produto>>> Get(int page = 1, int pageSize = 50)
         {
             var (totalProdutos, produtos) = await _produtoRepository.ObterTodos(page, pageSize);
@@ -33,7 +33,7 @@ namespace Prova_API.Controllers
             return Ok(resultado);
         }
 
-        [HttpGet("{guid:id}")]
+        [HttpGet("{id:guid}")]
         public async Task<ActionResult<Produto>> Get(Guid id)
         {
             var produto = await _produtoRepository.ObterPorId(id);
@@ -52,7 +52,7 @@ namespace Prova_API.Controllers
             return CreatedAtAction("Get", new { id = produto.Id }, produto);
         }
 
-        [HttpPut("{guid:id}")]
+        [HttpPut("{id:guid}")]
         public async Task<IActionResult> Put(Guid id, Produto produto)
         {
             if (id != produto.Id)
@@ -79,14 +79,14 @@ namespace Prova_API.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{guid:id}")]
+        [HttpDelete("{id:guid}")]
         public async Task<IActionResult> Delete(Guid id)
         {
             await _produtoRepository.Remover(id);
             return NoContent();
         }
 
-        [HttpPatch("{guid:id}")]
+        [HttpPatch("{id:guid}")]
         public async Task<IActionResult> Patch(Guid id)
         {
             var produto = await _produtoRepository.ObterPorId(id);
@@ -100,5 +100,6 @@ namespace Prova_API.Controllers
 
             return NoContent();
         }
+
     }
 }

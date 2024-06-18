@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prova_API", "Prova_API\Prov
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prova_MVC", "Prova_MVC\Prova_MVC.csproj", "{CD61CCD3-DF73-4EAB-8604-EB095C46EC9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prova_API.Data", "Prova_API.Data\Prova_API.Data.csproj", "{12A8EF7C-FDC0-435F-A595-E8A94120C8F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prova_API.Infra", "Prova_API.Data\Prova_API.Infra.csproj", "{12A8EF7C-FDC0-435F-A595-E8A94120C8F0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prova_API.Domain", "Prova_API.Domain\Prova_API.Domain.csproj", "{4C2F1AA8-9EDE-4472-B85C-4BB3EF5F3D03}"
 EndProject

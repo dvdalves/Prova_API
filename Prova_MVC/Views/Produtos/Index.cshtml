@@ -1,0 +1,77 @@
+﻿@model Prova_MVC.Utils.ResultadoPagina<Produto>
+
+@{
+    ViewBag.Title = "Lista de Produtos";
+    int itemIndex = (Model.Page - 1) * Model.PageSize + 1;
+}
+
+<h1>Lista de Produtos</h1>
+
+<div class="pagination">
+    <form method="get" asp-action="Index" class="form-inline d-flex align-items-center">
+        <div class="form-group mb-0">
+            <label for="pageSize" class="mr-2">Itens por página:</label>
+            <input type="number" id="pageSize" name="pageSize" value="@Model.PageSize" class="form-control" min="1" max="50" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Ok</button>
+    </form>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Ativo</th>
+            <th>Data de Cadastro</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var produto in Model.Items)
+        {
+            <tr>
+                <td>@(itemIndex++)</td>
+                <td>@produto.Nome</td>
+                <td>@produto.Descricao</td>
+                <td>@produto.Valor</td>
+                <td>@produto.Ativo</td>
+                <td>@produto.DataCadastro.ToString("dd/MM/yyyy HH:mm:ss.fff")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@produto.Id">Detalhes</a> |
+                    <a asp-action="Edit" asp-route-id="@produto.Id">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@produto.Id">Excluir</a> |
+                    <a asp-action="Ativar" asp-route-id="@produto.Id">Ativar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary mt-3">Criar Novo Produto</a>
+
+<div class="mt-2">
+    <span>Página @Model.Page de @Model.TotalPages</span>
+</div>
+
+<div class="btn-group mt-2">
+    @if (Model.Page > 1)
+    {
+        <form method="get" asp-action="Index" class="form-inline">
+            <input type="hidden" name="page" value="@(Model.Page - 1)" />
+            <input type="hidden" name="pageSize" value="@Model.PageSize" />
+            <button type="submit" class="btn btn-primary">Anterior</button>
+        </form>
+    }
+
+    @if (Model.Page < Model.TotalPages)
+    {
+        <form method="get" asp-action="Index" class="form-inline">
+            <input type="hidden" name="page" value="@(Model.Page + 1)" />
+            <input type="hidden" name="pageSize" value="@Model.PageSize" />
+            <button type="submit" class="btn btn-primary">Próxima</button>
+        </form>
+    }
+</div>

@@ -1,0 +1,27 @@
+﻿@model Produto
+
+@{
+    ViewBag.Title = "Adicionar Muitos Produtos";
+}
+
+<h2>Adicionar Muitos Produtos</h2>
+
+<form asp-action="AddMany" method="post">
+    <div class="form-group">
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" class="form-control" id="quantidade" name="Quantidade" min="1" max="1000" required />
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Adicionar</button>
+</form>
+
+<a href="@Url.Action("Index")" class="btn btn-secondary">Voltar para a Lista</a>
+
+@if (ViewData.ModelState.ErrorCount > 0)
+{
+    <div class="alert alert-danger">
+        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <p>@error.ErrorMessage</p>
+        }
+    </div>
+}

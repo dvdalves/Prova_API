@@ -1,0 +1,47 @@
+﻿@model Produto
+
+@{
+    ViewBag.Title = "Excluir Produto";
+}
+
+<h1>Excluir Produto</h1>
+
+<h4>Produto</h4>
+<hr />
+<div>
+    <h4>Tem certeza que deseja excluir este produto?</h4>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.DataCadastro.ToString("dd/MM/yyyy HH:mm:ss.fff")
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ativo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ativo)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <input type="submit" value="Excluir" class="btn btn-danger" /> |
+            <a asp-action="Index" class="btn btn-secondary">Voltar para a lista</a>
+        </div>
+    </form>
+</div>

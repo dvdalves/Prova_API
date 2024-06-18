@@ -1,6 +1,6 @@
-﻿using API.Data.Data;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Prova_API.Infra.Data;
 
 namespace Prova_API.Tests
 {

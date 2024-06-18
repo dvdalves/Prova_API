@@ -1,8 +1,8 @@
-﻿using API.Controllers;
-using API.Data.Repository;
-using API.Domain.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Prova_API.Controllers;
+using Prova_API.Domain.Models;
+using Prova_API.Infra.Repository;
 
 namespace Prova_API.Tests
 {

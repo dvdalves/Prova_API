@@ -1,6 +1,6 @@
 ﻿using Prova_API.Domain.Models;
 
-namespace Prova_API.Data.Repository
+namespace Prova_API.Infra.Repository
 {
     public interface IProdutoRepository
     {

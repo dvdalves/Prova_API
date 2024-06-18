@@ -10,7 +10,7 @@
 
         public Produto()
         {
-            DataCadastro = DateTime.UtcNow;
+            DataCadastro = DateTime.Now;
         }
 
         public void Ativar()
