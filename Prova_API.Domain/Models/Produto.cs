@@ -1,4 +1,4 @@
-﻿namespace API.Domain.Models
+﻿namespace Prova_API.Domain.Models
 {
     public class Produto : Entity
     {

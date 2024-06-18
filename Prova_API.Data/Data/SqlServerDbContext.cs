@@ -1,7 +1,7 @@
-﻿using API.Domain.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Prova_API.Domain.Models;
 
-namespace API.Data.Data
+namespace Prova_API.Data.Data
 {
     public class SqlServerDbContext : DbContext
     {

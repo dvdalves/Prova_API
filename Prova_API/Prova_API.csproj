@@ -17,11 +17,6 @@
 
 
 	<ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-
-	<ItemGroup>
 	  <ProjectReference Include="..\Prova_API.Data\Prova_API.Data.csproj" />
 	  <ProjectReference Include="..\Prova_API.Domain\Prova_API.Domain.csproj" />
 	</ItemGroup>

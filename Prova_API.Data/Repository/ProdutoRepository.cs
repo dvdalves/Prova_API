@@ -1,8 +1,8 @@
-﻿using API.Data.Data;
-using API.Domain.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Prova_API.Data.Data;
+using Prova_API.Domain.Models;
 
-namespace API.Data.Repository
+namespace Prova_API.Data.Repository
 {
     public class ProdutoRepository : IProdutoRepository
     {
