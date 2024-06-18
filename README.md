@@ -20,3 +20,6 @@ Na aba Utils, pode adicionar múltiplos produtos em memória para teste da pagin
 
 Na aba Data e Hora trás a data atual no formato solicitado no desafio
 ![image](https://github.com/dvdalves/Prova_API/assets/109628134/56e97515-fe9d-48fc-adff-213d7b2293e4)
+
+Não esqueça de rodar os testes
+![image](https://github.com/dvdalves/Prova_API/assets/109628134/3c50a4ce-a9ac-46bc-b776-fcf9f0381d75)
