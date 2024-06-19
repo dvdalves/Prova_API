@@ -48,5 +48,9 @@ Na aba Utils, pode adicionar múltiplos produtos em memória para teste da pagin
 Na aba Data e Hora trás a data atual no formato solicitado no desafio
 ![image](https://github.com/dvdalves/Prova_API/assets/109628134/56e97515-fe9d-48fc-adff-213d7b2293e4)
 
+## Exemplo de uso da paginação
+![testeprova](https://github.com/dvdalves/Prova_API/assets/109628134/cb0cc4bc-51a7-479b-9bc1-4d6280cd4535)
+
+
 ## Testes
 ![image](https://github.com/dvdalves/Prova_API/assets/109628134/3c50a4ce-a9ac-46bc-b776-fcf9f0381d75)
